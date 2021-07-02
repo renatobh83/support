@@ -1,0 +1,207 @@
+.chatConverse {
+  position: relative;
+  background: #fff;
+  margin: 6px 0 0px 0;
+  height: 300px;
+  min-height: 0;
+  font-size: 12px;
+  line-height: 18px;
+  overflow-y: auto;
+  width: 100%;
+  float: right;
+  padding-bottom: 100px;
+}
+.chatField {
+  position: relative;
+  margin: 5px 0 5px 0;
+  width: 50%;
+  font-family: "Roboto";
+  font-size: 12px;
+  line-height: 30px;
+  font-weight: 500;
+  color: #4b4b4b;
+  -webkit-font-smoothing: antialiased;
+  border: none;
+  outline: none;
+  display: inline-block;
+}
+
+.chatField.chatMessage {
+  height: 30px;
+  resize: none;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* .chatConverse .chatMsgItem.chatMsgItemAdmin .chatAvatar {
+  left: -52px;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.chatConverse .chatMsgItem.chatMsgItemUser .chatAvatar {
+  right: -52px;
+  background: rgba(0, 0, 0, 0.6);
+}
+.chatConverse .chatMsgItem .chatAvatar,
+.chatAvatar img {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50%;
+} */
+.chatConverse .chatMsgItem {
+  position: relative;
+  margin: 8px 0 15px 0;
+  padding: 8px 10px;
+  max-width: 60%;
+  display: block;
+  word-wrap: break-word;
+  border-radius: 3px;
+  -webkit-animation: zoomIn 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+  animation: zoomIn 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+  clear: both;
+  z-index: 999;
+}
+/* .chat .chatConverse .chatMsgItem .chatAvatar {
+  position: absolute;
+  top: 0;
+} */
+
+.chatConverse .chatMsgItem.chatMsgItemAdmin {
+  margin-left: 20px;
+  float: left;
+  background: rgba(0, 0, 0, 0.03);
+  color: #666;
+}
+.chatConverse .chatMsgItem.chatMsgItemUser {
+  margin-right: 20px;
+  float: right;
+  background: #42a5f5;
+  color: #eceff1;
+}
+.chatConverse .chatMsgItem.chatMsgItemAdmin:before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: -12px;
+  z-index: 998;
+  border: 6px solid transparent;
+  border-right-color: rgba(255, 255, 255, 0.4);
+}
+.fabField {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  background: #fff;
+  border-top: 1px solid #eee;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.fabField2 {
+  bottom: 0px;
+  position: absolute;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  z-index: 999;
+}
+
+.fabField a {
+  display: inline-block;
+  text-align: center;
+}
+
+.fabField .chatIcon {
+  width: 35px;
+  height: 35px;
+  box-shadow: none;
+  margin: 5px;
+}
+
+.fabField .chatIcon > i {
+  font-size: 1.6em;
+  line-height: 35px;
+  color: #bbb;
+}
+.fabField .chatIcon > i:hover {
+  color: #42a5f5;
+}
+
+.chatField {
+  position: relative;
+  margin: 5px 0 5px 0;
+  width: 80%;
+  font-family: "Roboto";
+  font-size: 12px;
+  line-height: 30px;
+  font-weight: 500;
+  color: #4b4b4b;
+  -webkit-font-smoothing: antialiased;
+  border: none;
+  outline: none;
+  display: inline-block;
+}
+
+.chatField.chatMessage {
+  height: 30px;
+  resize: none;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.chatIcon.send {
+  float: right;
+  background: rgba(0, 0, 0, 0);
+}
+.iconField .chatIcon {
+  width: 35px;
+  height: 35px;
+  box-shadow: none;
+  margin: 5px;
+}
+.iconField a {
+  display: inline-block;
+  text-align: center;
+}
+.iconField .chatIcon > i {
+  font-size: 1.6em;
+  line-height: 35px;
+  color: #bbb;
+}
+.iconField .chatIcon > i:hover {
+  color: #42a5f5;
+}
+@media only screen and (min-width: 300px) {
+  .chat {
+    width: 250px;
+  }
+}
+/* SMARTPHONES LANDSCAPE */
+
+@media only screen and (min-width: 480px) {
+  .chat {
+    width: 300px;
+  }
+  .chat_field {
+    width: 65%;
+  }
+}
+/* TABLETS PORTRAIT */
+
+@media only screen and (min-width: 768px) {
+  .chat {
+    width: 300px;
+  }
+  .chatField {
+    width: 65%;
+  }
+}
+/* TABLET LANDSCAPE / DESKTOP */
+
+@media only screen and (min-width: 1024px) {
+  .chat {
+    width: 300px;
+  }
+  .chatField {
+    width: 65%;
+  }
+}

@@ -1,0 +1,48 @@
+.chatHeader {
+  /* margin: 10px; */
+  font-size: 13px;
+  font-family: "Roboto";
+  font-weight: 500;
+  color: #f3f3f3;
+  height: 55px;
+  background: #42a5f5;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 8px;
+}
+
+.chatOption {
+  /* float: left; */
+  margin-left: 1rem;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 15px;
+  list-style: none;
+  position: relative;
+
+  text-align: relative;
+  margin-right: 10px;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
+.headerImg > img {
+  border-radius: 50%;
+  width: 55px;
+  float: left;
+  margin: -30px 20px 10px 20px;
+  border: 4px solid rgba(0, 0, 0, 0.21);
+}
+
+.chatOption .agent {
+  font-size: 12px;
+  font-weight: 300;
+}
+.chatOption .online {
+  opacity: 0.4;
+  font-size: 11px;
+  font-weight: 300;
+}

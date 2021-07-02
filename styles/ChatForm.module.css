@@ -1,0 +1,52 @@
+.chatForm .messageForm {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+}
+.chatForm .messageForm input {
+  margin: 5px 0 5px 0;
+  border: 1px solid #e0e0e0;
+}
+.chatForm .messageForm textarea {
+  margin: 5px 0 5px 0;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  width: 90%;
+  font-family: "Roboto";
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #4b4b4b;
+  -webkit-font-smoothing: antialiased;
+
+  outline: none;
+  background: #fff;
+  display: inline-block;
+  resize: none;
+  padding: 5px;
+  border-radius: 3px;
+}
+.chatForm .messageForm button {
+  margin: 0;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  width: 80%;
+  font-family: "Roboto";
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+
+  outline: none;
+  background: #fff;
+  display: inline-block;
+  resize: none;
+  padding: 5px;
+  border-radius: 3px;
+  background: #83c76d;
+  cursor: pointer;
+}
