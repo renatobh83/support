@@ -23,8 +23,7 @@ export default function ChatForm() {
           <input
             placeholder="Email"
             value={email}
-            required
-            type="email"
+            type="text"
             onChange={(e) => setEmail(e.target.value)}
           />
           <textarea
