@@ -9,7 +9,6 @@ export const initiateSocket = () => {
 
 export const disconnectSocket = () => {
   if (socket) {
-    console.log("Desconectar");
     socket.disconnect();
   }
 };

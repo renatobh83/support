@@ -1,0 +1,54 @@
+.adminContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.adminContainer > span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.userList {
+  padding: 0.8rem;
+}
+.email {
+  float: left;
+  width: 350px;
+}
+
+.btnAtd {
+  cursor: pointer;
+  color: #fff;
+  background: #b32a2a;
+  border: none;
+  height: 30px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.btnAtd:hover {
+  opacity: 0.9;
+}
+.admin {
+  border: 1px solid #ededed;
+  margin-top: 5px;
+  width: 100%;
+}
+.adminListMessages {
+  height: 300px;
+  overflow-y: scroll;
+}
+.inSupport {
+  display: flex;
+  background: #8d7aef;
+  color: #fff;
+  font-size: 17px;
+}
+.inSupport i {
+  margin-left: auto;
+  margin-right: 0.3rem;
+  cursor: pointer;
+}

@@ -2,14 +2,22 @@ import { useEffect, useState } from "react";
 
 import styles from "../../styles/Client.module.css";
 
-import ChatForm from "./chatForm";
-import ChatConverse from "./chatConverse";
+import ChatForm from "../components/chatForm";
+import ChatWithConstomer from "../components/ChatWithCustomer";
+import Header from "../components/Header";
 import { useAppContext } from "../context/SupportContext";
 import { disconnectSocket, initiateSocket } from "../utils/SocketConnect.js";
 import { ClearValues } from "../utils/CleanValues.js";
 
 export default function Client() {
-  const { formValue, forms, clientMessage, clearMessages } = useAppContext();
+  const {
+    formValue,
+    forms,
+    clientMessage,
+    clearMessages,
+    sokcet_admin,
+    getSocket,
+  } = useAppContext();
   const [isVisible, setisVisible] = useState(false);
   const [isForm, setIsForm] = useState(true);
 
@@ -25,6 +33,7 @@ export default function Client() {
   function clientSocket() {
     if (!isForm) {
       const socket = initiateSocket();
+      getSocket(socket);
       socket.on("connect", () => {
         const params = {
           email: formValue.email,
@@ -40,6 +49,10 @@ export default function Client() {
       });
       socket.on("client_list_all_messages", (messages) => {
         clientMessage(messages);
+      });
+      socket.on("admin_send_to_client", (params) => {
+        clientMessage(params.allMessages);
+        sokcet_admin(params.socket_id);
       });
     }
   }
@@ -60,7 +73,13 @@ export default function Client() {
               isVisible ? styles.chat + " " + styles.isVisible : styles.chat
             }
           >
-            {isForm ? <ChatForm /> : <ChatConverse />}
+            {isForm ? (
+              <ChatForm />
+            ) : (
+              <>
+                <Header /> <ChatWithConstomer />
+              </>
+            )}
           </div>
           <a
             id="prime"

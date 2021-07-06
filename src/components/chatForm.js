@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "../../styles/ChatForm.module.css";
 import { useAppContext } from "../context/SupportContext";
+
 export default function ChatForm() {
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");

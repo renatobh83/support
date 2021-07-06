@@ -1,12 +1,12 @@
-import { useEffect } from "react";
-import styles from "../../styles/ChatConverse.module.css";
+import { useState } from "react";
+import styles from "../../styles/ChatWithSupport.module.css";
 import { useAppContext } from "../context/SupportContext";
-import Header from "./Header";
 
-export default function ChatConverse() {
-  const { arrayMessages } = useAppContext();
+export default function ChatWithSupport({ messagesClient, send }) {
+  const { socket } = useAppContext();
+  const [messageText, setMessageText] = useState("");
 
-  const chatActive = arrayMessages.map((message) => {
+  const chatActive = messagesClient.map((message) => {
     if (message.admin_id === null) {
       return (
         <span
@@ -19,23 +19,34 @@ export default function ChatConverse() {
     } else {
       return (
         <span
+          key={message.id}
           className={styles.chatMsgItem + " " + styles.chatMsgItemAdmin}
-        ></span>
+        >
+          {message.text}
+        </span>
       );
     }
   });
 
+  function sendMessage() {
+    const params = {
+      text: messageText,
+    };
+    send(params);
+    setMessageText("");
+  }
   return (
     <>
-      <Header />
       <div className={styles.chatConverse}>{chatActive}</div>
       <div className={styles.fabField}>
         <a id="fab_send" className={styles.chatIcon + " " + styles.send}>
-          <i className="zmdi zmdi-mail-send"></i>
+          <i className="zmdi zmdi-mail-send" onClick={() => sendMessage()}></i>
         </a>
         <textarea
           id="chatSend"
           name="chat_message"
+          value={messageText}
+          onChange={(e) => setMessageText(e.target.value)}
           placeholder="Enviar uma mensagem"
           className={styles.chatField + " " + styles.chatMessage}
         ></textarea>
